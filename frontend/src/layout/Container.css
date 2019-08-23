@@ -6,8 +6,16 @@
 }
 .container-wrapper{
     width: 60%;
+    min-width: 350px;
     height: 70vh;
     margin: 0 auto;
+    word-break: break-all;
     background-color: bisque;
-    background-color: aqua;
+}
+.leftmenu_warpper{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.container-body{
+    width: 60%;
 }

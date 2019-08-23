@@ -1,10 +1,15 @@
 import React from 'react'
 import './Container.css'
-function Container({ children }) {
+import { LeftMenu } from './'
+function Container({ children, isMain }) {
+
     return (
         <div className="main">
-            <div className="container-wrapper">
-                {children}
+            <div className={isMain ? "container-wrapper" : "leftmenu_warpper"}>
+                {!isMain && <LeftMenu />}
+                <div className="container-body">
+                    {children}
+                </div>
             </div>
         </div>
     )

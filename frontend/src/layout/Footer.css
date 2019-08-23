@@ -1,5 +1,6 @@
 .inner_footer{
     width: 100%;
+    min-width: 350px;
     height: 10vh;
     color: white;
     background-color: rgb(71, 71, 71);

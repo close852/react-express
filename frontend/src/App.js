@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Layout } from './layout'
+import { Route, Switch } from 'react-router-dom';
+import { Layout, Main } from './layout'
+import { BBSIntro } from './bbs'
+import { AppIntro } from './apps'
 import './App.css'
 class App extends Component {
   state = {
@@ -24,11 +27,18 @@ class App extends Component {
   }
 
   render() {
-    const { keyword } = this.state;
+    const isMain = this.props.location.pathname === "/";
+
     return (
-      <Layout>
-        {keyword}
-      </Layout>
+      <div>
+        <Layout isMain={isMain}>
+          <Switch>
+            <Route exact path="/" component={Main} />
+            <Route path="/bbs" component={BBSIntro} />
+            <Route path="/app" component={AppIntro} />
+          </Switch>
+        </Layout>
+      </div>
     );
   }
 }

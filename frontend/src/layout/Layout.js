@@ -1,15 +1,14 @@
 import React from 'react'
 import { Header, TopMenu, Container, Footer } from './'
-function Layout({ children }) {
+function Layout({ history, location, children, isMain }) {
     return (
         <div>
             <Header />
             <TopMenu />
-            <Container>
+            <Container isMain={isMain}>
                 {children}
             </Container>
             <Footer />
-
         </div>
     )
 }
