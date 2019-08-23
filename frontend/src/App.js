@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { Layout } from './layout'
+import './App.css'
 class App extends Component {
   state = {
     keyword: ''
   }
 
   setKeyword = (keyword) => {
-    console.log('keyword : ' + keyword);
+    console.log('keyword : ' + JSON.stringify(keyword.data));
     this.setState({
-      keyword: keyword
+      keyword: JSON.stringify(keyword.data)
     })
   }
 
@@ -24,9 +26,9 @@ class App extends Component {
   render() {
     const { keyword } = this.state;
     return (
-      <div>
-        App {keyword}
-      </div>
+      <Layout>
+        {keyword}
+      </Layout>
     );
   }
 }

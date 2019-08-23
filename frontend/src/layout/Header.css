@@ -1,0 +1,10 @@
+.inner_head{
+    width: 100%;
+    min-width: 350px;
+    height: 15vh;
+    background-color: #ffcc00;
+    margin: 0 auto;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
