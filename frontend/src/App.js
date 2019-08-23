@@ -2,12 +2,17 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import { Route, Switch } from 'react-router-dom';
 import { Layout, Main } from './layout'
-import { BBSIntro } from './bbs'
-import { AppIntro } from './apps'
+import { BBSIntro,BBSRouter } from './bbs'
+import { AppRouter } from './apps'
 import './App.css'
 class App extends Component {
   state = {
-    keyword: ''
+    keyword: '',
+    todoList:[{}],
+    ingList:[{id:1,title:'22'}],
+    endList:[{}],
+    tempSaveList:[{}],
+    bbsList: [{}]
   }
 
   setKeyword = (keyword) => {
@@ -28,14 +33,20 @@ class App extends Component {
 
   render() {
     const isMain = this.props.location.pathname === "/";
+    const {location, history} = this.props;
+    const {todoList, ingList,endList,tempSaveList, bbsList} = this.state;
 
     return (
       <div>
-        <Layout isMain={isMain}>
+        <Layout isMain={isMain} location={location} history ={history}>
           <Switch>
             <Route exact path="/" component={Main} />
-            <Route path="/bbs" component={BBSIntro} />
-            <Route path="/app" component={AppIntro} />
+            <Route path="/app">
+              <AppRouter location={location} history ={history} ingList={ingList} todoList={todoList} endList={endList} tempSaveList={tempSaveList}/>
+            </Route>
+            <Route path="/bbs" component={BBSIntro}>
+              <BBSRouter bbsList={bbsList}/>
+            </Route>
           </Switch>
         </Layout>
       </div>

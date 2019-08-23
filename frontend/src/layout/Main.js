@@ -1,10 +1,10 @@
-import React from 'react'
+import React,{Fragment} from 'react'
 
 function Main() {
     return (
-        <div>
-            메인화면ss
-        </div>
+        <Fragment>
+            메인화면ssaa
+        </Fragment>
     )
 }
 

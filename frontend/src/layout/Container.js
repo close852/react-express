@@ -1,13 +1,13 @@
 import React from 'react'
 import './Container.css'
 import { LeftMenu } from './'
-function Container({ children, isMain }) {
+function Container({ children, isMain ,menu}) {
 
     return (
         <div className="main">
             <div className={isMain ? "container-wrapper" : "leftmenu_warpper"}>
-                {!isMain && <LeftMenu />}
-                <div className="container-body">
+                {!isMain && <LeftMenu menu={menu}/>}
+                <div className={isMain ? "container-body" : "leftmenu-body"}>
                     {children}
                 </div>
             </div>

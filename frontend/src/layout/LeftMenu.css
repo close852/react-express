@@ -1,7 +1,14 @@
-.leftMenu{
-    width: 10%;
+.leftMenuList{
+    width: 15%;
     height: 70vh;
     background-color: beige;
     border-right: 1px solid gray;
+}
 
+.leftMenu{
+    font: 20px bold;
+    padding-top: 20px;
+}
+.leftmenu_selected{
+    font:30px bold;
 }
